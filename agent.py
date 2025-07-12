@@ -4,7 +4,7 @@ from langgraph.prebuilt import ToolNode, tools_condition
 from langgraph.checkpoint.memory import MemorySaver
 from langgraph.graph import MessagesState, StateGraph, END
 from langdetect import detect
-from retrieve import retrieve  # Make sure the name is spelled correctly
+from retrieve import retrieve  
 
 def get_agent(thread_id: str = "abc123"):
     graph_builder = StateGraph(MessagesState)
@@ -75,7 +75,6 @@ Answer (in {language} only):
         response = llm.invoke(prompt)
         return {"messages": [response]}
 
-    # Build the graph
     graph_builder.add_node(query_or_respond)
     graph_builder.add_node(tools)
     graph_builder.add_node(generate)
@@ -89,7 +88,6 @@ Answer (in {language} only):
     graph_builder.add_edge("tools", "generate")
     graph_builder.add_edge("generate", END)
 
-    # Use checkpointing
     memory = MemorySaver()
     graph = graph_builder.compile(checkpointer=memory)
 

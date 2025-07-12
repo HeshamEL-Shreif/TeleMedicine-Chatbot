@@ -10,7 +10,7 @@ app = FastAPI()
 vector_db = save_docs_to_vector_store()
 graph, config = get_agent()
 
-# Request schema
+
 class QueryRequest(BaseModel):
     query: str
 
