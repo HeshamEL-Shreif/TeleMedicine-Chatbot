@@ -2,3 +2,5 @@
 .DS_Store
 .vscode
 .idea
+.dist
+__pycache__
