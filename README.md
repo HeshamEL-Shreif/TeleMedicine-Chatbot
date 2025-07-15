@@ -2,7 +2,7 @@
 
 This repository combines two major components:
 
-### 📌 1. Preprocessing & OCR Pipeline  
+## 📌 1. Preprocessing & OCR Pipeline  
 A script that automates the scraping and transformation of public Arabic and English medical documents into structured PDF files:
 - 🌐 Scrapes images from a public Google Sites portal for patient education
 - 🧠 Extracts Arabic text using a Vision-Language Qwen2 model
@@ -10,12 +10,17 @@ A script that automates the scraping and transformation of public Arabic and Eng
 - 🗃 Merges extracted text and saves them as `.txt` files
 - 🧾 Converts all text into **properly aligned Arabic-friendly PDFs** using ReportLab
 
-### 🚀 2. Multilingual AI Chatbot Backend  
+## 🚀 2. Multilingual AI Chatbot Backend  
 A FastAPI server that supports Arabic-English medical queries using Retrieval-Augmented Generation (RAG) with Groq’s LLaMA 4 model, LangGraph agents, and web search tools.
 
 ---
+### DASH Front-end
+#### 🔗 Front-end Repo: 
+`github.com/HeshamEL-Shreif/Telemedicine-chatbot-Dash-frontend.git`
 
-## 🩺 Features
+![demo](demo.png)
+
+### 🩺 Features
 
 - 🔍 Medical QA with Retrieval-Augmented Generation (RAG)  
 - 🌐 Arabic & English support with dynamic language detection  
@@ -29,7 +34,7 @@ A FastAPI server that supports Arabic-English medical queries using Retrieval-Au
 
 ---
 
-## 🗂 Project Structure
+### 🗂 Project Structure
 
 ```bash
 .
@@ -53,7 +58,7 @@ A FastAPI server that supports Arabic-English medical queries using Retrieval-Au
 
 ---
 
-## 🧠 LLM & Tools
+### 🧠 LLM & Tools
 
 | Component        | Model/Tool                                                                 |
 |------------------|-----------------------------------------------------------------------------|
@@ -66,7 +71,7 @@ A FastAPI server that supports Arabic-English medical queries using Retrieval-Au
 
 ---
 
-## 🧪 Example API Call
+### 🧪 Example API Call
 
 **Endpoint:** `POST /query`  
 **Request:**
@@ -84,20 +89,20 @@ A FastAPI server that supports Arabic-English medical queries using Retrieval-Au
 
 ---
 
-## 🧰 Setup Instructions
+### 🧰 Setup Instructions
 
-### 1. Clone the Repo
+#### 1. Clone the Repo
 ```bash
 git clone https://github.com/yourusername/telemedicine-chatbot-backend.git
 cd telemedicine-chatbot-backend
 ```
 
-### 2. Install Dependencies
+#### 2. Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Configure API Keys in `.env`
+#### 3. Configure API Keys in `.env`
 ```
 TAVILY_API_KEY=your_api_key_here
 HUGGINGFACEHUB_API_TOKEN=your_api_key_here
@@ -106,7 +111,7 @@ GROQ_API_KEY=your_api_key_here
 
 ---
 
-## 🧪 Run the Backend API
+### 🧪 Run the Backend API
 
 ```bash
 uvicorn main:app --reload
@@ -115,7 +120,7 @@ Access docs at: [http://localhost:8000/docs](http://localhost:8000/docs)
 
 ---
 
-## 🖼 Run the Scraper + OCR Pipeline
+### 🖼 Run the Scraper + OCR Pipeline
 
 The pipeline is already integrated into `scraper_ocr_pipeline.py`.
 
@@ -132,21 +137,21 @@ This will:
 
 ---
 
-## 🐳 Docker Usage
+### 🐳 Docker Usage
 
-### Build the Image
+#### Build the Image
 ```bash
 docker build -t telemedicine-backend .
 ```
 
-### Run the Container
+#### Run the Container
 ```bash
 docker run -p 8000:8000 telemedicine-backend
 ```
 
 ---
 
-## 🧠 How It Works
+### 🧠 How It Works
 1.	User query is received.
 2.	Query is language detected (Arabic or English).
 3.	A synthetic paragraph is generated using LLM to simulate an answer-containing doc.
@@ -157,7 +162,7 @@ docker run -p 8000:8000 telemedicine-backend
 
 ---
 
-## 🧠 Prompt Logic Highlights
+### 🧠 Prompt Logic Highlights
 - Responds only with medical facts
 - Ignores or filters non-medical questions
 - Detects and replies in the user’s language
