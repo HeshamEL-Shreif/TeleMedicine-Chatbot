@@ -33,3 +33,4 @@ langchain-chroma
 fastapi
 uvicorn
 requests
+langchain-tavily
