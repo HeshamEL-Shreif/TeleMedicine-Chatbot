@@ -1,4 +1,4 @@
-# 🧠 TeleMedicine Chatbot – Backend (FastAPI + LangGraph)
+# 🧠 TeleMedicine Chatbot – Backend (FastAPI + LangGraph + Streamlit)
 
 This repository combines two major components:
 
@@ -14,11 +14,25 @@ A script that automates the scraping and transformation of public Arabic and Eng
 A FastAPI server that supports Arabic-English medical queries using Retrieval-Augmented Generation (RAG) with Groq’s LLaMA 4 model, LangGraph agents, and web search tools.
 
 ---
-### DASH Front-end
-#### 🔗 Front-end Repo: 
-`github.com/HeshamEL-Shreif/Telemedicine-chatbot-Dash-frontend.git`
+### Streamlit Front-end
+#### 🖥️ Built-in Streamlit UI
 
-![demo](demo.png)
+A modern, interactive chat interface is included using [Streamlit](https://streamlit.io/).  
+You can chat with the AI assistant directly from your browser, with a clean white background and colored chat bubbles for user and bot messages.
+
+**To run the Streamlit UI:**
+1. Make sure the FastAPI backend is running (see below).
+2. Install Streamlit if you haven't:
+   ```bash
+   pip install streamlit
+   ```
+3. Run the Streamlit app:
+   ```bash
+   streamlit run ui/streamlit_app.py
+   ```
+4. Open your browser at [http://localhost:8501](http://localhost:8501)
+
+---
 
 ### 🩺 Features
 
@@ -31,6 +45,7 @@ A FastAPI server that supports Arabic-English medical queries using Retrieval-Au
 - 🚀 FastAPI server with an intuitive REST endpoint  
 - 🐳 Docker-ready for fast deployment  
 - 🖼 Preprocessing pipeline that scrapes medical image content and prepares structured PDF datasets  
+- 💬 **Streamlit chat UI for easy interaction**
 
 ---
 
@@ -51,6 +66,8 @@ A FastAPI server that supports Arabic-English medical queries using Retrieval-Au
 ├── retrieve.py                   # Generates synthetic Arabic documents
 ├── agent.py                      # LangGraph agent workflow
 ├── main.py                       # FastAPI app with /query endpoint
+├── ui/
+│   └── streamlit_app.py          # Streamlit chat UI
 ├── requirements.txt
 ├── Dockerfile
 └── README.md
@@ -134,6 +151,17 @@ This will:
 - Save Arabic & English images under respective folders
 - Extract and save `.txt` files from images
 - Generate properly formatted PDFs into the `documents/` folder
+
+---
+
+### 🖥️ Run the Streamlit Chat UI
+
+1. Make sure the backend (FastAPI) is running.
+2. In a new terminal, run:
+   ```bash
+   streamlit run ui/streamlit_app.py
+   ```
+3. Open [http://localhost:8501](http://localhost:8501) in your browser.
 
 ---
 

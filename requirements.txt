@@ -1,16 +1,16 @@
+### libraries for getting data
+# beautifulsoup4
+# pytesseract
+# reportlab
+# arabic_reshaper
+# Pillow
+# python-bidi
+# transformers
+# torch
+# accelerate>=0.27.2  # Required by transformers for device_map
+# einops>=0.6.1       # Required by some vision-language models
 
-requests
-beautifulsoup4
-pytesseract
-reportlab
-arabic_reshaper
-Pillow
-python-bidi
-transformers
-torch
-accelerate>=0.27.2  # Required by transformers for device_map
-einops>=0.6.1       # Required by some vision-language models
-
+python
 langchain
 langchain-core
 langchain-community
@@ -34,3 +34,5 @@ fastapi
 uvicorn
 requests
 langchain-tavily
+streamlit
+requests
