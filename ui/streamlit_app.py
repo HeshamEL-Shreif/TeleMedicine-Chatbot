@@ -6,8 +6,37 @@ import requests
 st.markdown(
     """
     <style>
-    body, .stApp {
+    html, body, .stApp {
+        height: 100%;
+        width: 100%;
+        min-height: 100vh;
+        min-width: 100vw;
+        margin: 0;
+        padding: 0;
         background-color: #fff !important;
+    }
+    .main, .block-container {
+        height: 100vh !important;
+        min-height: 100vh !important;
+        width: 100vw !important;
+        min-width: 100vw !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        box-sizing: border-box;
+    }
+    /* Add top margin to push content below Streamlit's header */
+    .colored-title {
+        background: linear-gradient(90deg, #1e90ff 0%, #00c6ff 100%);
+        color: #fff;
+        padding: 20px 0 20px 0;
+        border-radius: 14px;
+        text-align: center;
+        font-size: 2.3rem;
+        font-weight: bold;
+        margin-bottom: 28px;
+        margin-top: 3.5rem; /* Increased top margin for visibility */
+        letter-spacing: 1px;
+        box-shadow: 0 2px 8px rgba(30,144,255,0.10);
     }
     .chat-container {
         display: flex;
@@ -36,19 +65,6 @@ st.markdown(
         margin-right: auto;
         font-size: 1.08rem;
         box-shadow: 0 2px 8px rgba(207,222,243,0.08);
-    }
-    .colored-title {
-        background: linear-gradient(90deg, #1e90ff 0%, #00c6ff 100%);
-        color: #fff;
-        padding: 20px 0 20px 0;
-        border-radius: 14px;
-        text-align: center;
-        font-size: 2.3rem;
-        font-weight: bold;
-        margin-bottom: 28px;
-        margin-top: 0;
-        letter-spacing: 1px;
-        box-shadow: 0 2px 8px rgba(30,144,255,0.10);
     }
     </style>
     """,

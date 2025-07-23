@@ -174,7 +174,7 @@ docker build -t telemedicine-backend .
 
 #### Run the Container
 ```bash
-docker run -p 8000:8000 telemedicine-backend
+docker run -p 8000:8000 -p 8501:8501 telemedicine-backend
 ```
 
 ---
